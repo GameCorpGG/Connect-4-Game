@@ -1,0 +1,166 @@
+/* Reset styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f3f4f6; /* Default background color */
+    transition: background-color 0.5s ease; /* Smooth transition for background color */
+    color: #333;
+}
+
+/* Background color for win/lose conditions */
+body.player-win {
+    background-color: #008000; /* Green background for player win */
+}
+
+body.robot-win {
+    background-color: #ff0000; /* Red background for AI win */
+}
+
+body.tie-game {
+    background-color: #fff3cd; /* Yellow background for a tie */
+}
+
+#status {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    background: linear-gradient(145deg, #f5f5f5, #d9d9d9);
+    padding: 10px 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px #aaa, -4px -4px 10px #fff;
+}
+
+#game-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 10px;
+    background: linear-gradient(145deg, #e0e0e0, #c0c0c0);
+    border-radius: 20px;
+    box-shadow: 8px 8px 20px #aaa, -8px -8px 20px #fff;
+}
+
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #4a90e2;
+}
+
+label, #status {
+    font-size: 1.1em;
+    margin: 10px 0;
+    color: #333;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* Adjust based on your Connect-4 board dimensions */
+    gap: 5px;
+    margin: 10px auto;
+    width: 100%;
+    max-width: 600px;
+    #background: linear-gradient(145deg, #2a2a2a, #1a1a1a); /* Dark gray */
+    #box-shadow: 4px 4px 10px #111, -4px -4px 10px #333;
+    #padding: 10px;
+    border-radius: 10px;
+}
+
+#board div {
+    width: 100%;
+    padding-top: 100%; /* Makes the div a perfect square */
+    position: relative;
+	border: 2px solid #fff; /* White border for contrast */
+    border-radius: 50%;
+    #background: radial-gradient(circle, #ff4d4d, #b30000); /* Brighter red tones */
+    box-shadow: 
+    inset 4px 4px 10px #333333, /* Darker grey for inner shadow */
+    inset -4px -4px 10px #aaaaaa, /* Lighter grey for inner shadow */
+    0 0 10px 2px rgba(128, 128, 128, 0.5); /* Grey glow around the element */
+
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#board div:hover {
+    transform: scale(1.1);
+    box-shadow: inset 6px 6px 14px #820000, inset -6px -6px 14px #ff5757;
+}
+
+/* Yellow Piece */
+.yellow-piece {
+    background: radial-gradient(circle, #ffe066, #c9b200); /* Brighter yellow tones */
+	box-shadow: inset 4px 4px 10px #b39d00, inset -4px -4px 10px #fff9a8, 0 0 10px 2px rgba(255, 255, 0, 0.5); /* Yellow glow for yellow pieces */
+	border: 2px solid #000; /* Black border for yellow pieces */
+}
+
+.yellow-piece:hover {
+    transform: scale(1.1);
+    box-shadow: inset 6px 6px 14px #b39d00, inset -6px -6px 14px #fff14c;
+}
+
+
+.cell {
+    border: 1px solid #ccc;
+    background-color: #e3e3e3;
+    border-radius: 40%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 45px;
+    height: 45px;
+	transition: background-color 0.3s ease;
+	}
+
+.cell:hover {
+    transform: scale(1.1);
+    background-color: #f0f0f0;
+}
+
+.cell.player {
+    background-color: #ffdd57;
+}
+
+.cell.robot {
+    background-color: #4a90e2;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(145deg, #007bff, #0056b3);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px #003f6b, -4px -4px 10px #00b7ff;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin: 10px;
+}
+
+button:hover {
+    transform: translateY(-5px);
+    box-shadow: 6px 6px 14px #003f6b, -6px -6px 14px #00b7ff;
+}
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: 2px 2px 6px #003f6b, -2px -2px 6px #00b7ff;
+}
+
+button#normal-mode-button, button#challenging-mode-button {
+    margin-right: 10px;
+}
+
